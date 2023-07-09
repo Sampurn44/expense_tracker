@@ -38,12 +38,17 @@ class ExpenseBucket {
     required this.category,
     required this.expenses,
   });
+  ExpenseBucket.forCategory(List<Expense> allExpense, this.category)
+      : expenses = allExpense
+            .where((expenses) => expenses.category == category)
+            .toList();
   final Category category;
   final List<Expense> expenses;
-  double get total {
+  double get totalexpenses {
     double sum = 0;
-    for()
-  
-    
+    for (final expense in expenses) {
+      sum = sum + expense.amount;
+    }
+    return sum;
   }
 }
