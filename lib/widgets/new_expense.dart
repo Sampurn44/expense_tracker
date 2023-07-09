@@ -44,7 +44,10 @@ class _NewExpenseState extends State<NewExpense> {
       showDialog(
         context: context,
         builder: (ctx) => AlertDialog(
-          title: const Text("Invalid Input"),
+          title: const Text(
+            "Invalid Input",
+            style: TextStyle(color: Colors.red),
+          ),
           content: const Text(
               "Please make sure a valid title, amount,date and category was input"),
           actions: [
